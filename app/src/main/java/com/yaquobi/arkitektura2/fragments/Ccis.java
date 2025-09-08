@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import com.yaquobi.arkitektura2.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.yaquobi.arkitektura2.fragments.Home;
+import com.yaquobi.arkitektura2.activity.ARActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,17 +84,10 @@ public class Ccis extends Fragment {
         });
         View previewBtn = view.findViewById(R.id.previewBtn);
         previewBtn.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("MODEL_PATH", "models/cat.glb");
-
-            ARFragment arFragment = new ARFragment();
-            arFragment.setArguments(bundle);
-
-            getParentFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, arFragment)
-                    .addToBackStack(null)
-                    .commit();
+            Intent intent = new Intent(getActivity(), com.yaquobi.arkitektura2.activity.ARActivity.class);
+            // Pass actual file path instead of just "CCIS"
+            intent.putExtra("MODEL_KEY", "CCIS");
+            startActivity(intent);
         });
         // Return the view after setting up the listener
         return view;
