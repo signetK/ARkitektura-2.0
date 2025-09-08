@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.core)
     implementation(libs.core.ktx)
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
