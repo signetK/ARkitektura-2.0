@@ -105,7 +105,7 @@ public class Home extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         collegeList = new ArrayList<>();
-        collegeList.add(new CollegeModel(R.drawable.ui_coe,R.drawable.ic_ccis, "College of Computing and Information Sciences"));
+        collegeList.add(new CollegeModel(R.drawable.ui_ccis,R.drawable.ic_ccis, "College of Computing and Information Sciences"));
         collegeList.add(new CollegeModel(R.drawable.ui_coe,R.drawable.ic_coe, "College of Engineering"));
         collegeList.add(new CollegeModel(R.drawable.ui_cas,R.drawable.ic_cas, "College of Arts and Sciences"));
         collegeList.add(new CollegeModel(R.drawable.ui_cafsd,R.drawable.ic_cafsd, "College of Agriculture, Food, and Sustainable Development"));

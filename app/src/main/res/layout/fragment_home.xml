@@ -32,4 +32,6 @@
         app:tint="@color/white"
         android:contentDescription="Scan QR" />
 
+
 </RelativeLayout>
+

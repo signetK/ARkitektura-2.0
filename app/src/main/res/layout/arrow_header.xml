@@ -9,23 +9,27 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:background="@color/white"
         android:outlineProvider="background"
         android:elevation="100dp"
         android:orientation="horizontal">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/arrow"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
             android:adjustViewBounds="true"
+            android:background="@drawable/rounded"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/arrow_back_24" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrow_back_24"
+            android:clickable="true"
+            android:focusable="true"/>
 
 
         <View
