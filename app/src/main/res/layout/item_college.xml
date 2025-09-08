@@ -23,7 +23,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp">
 
-            <!-- Left side image -->
             <ImageView
                 android:id="@+id/collegeImage"
                 android:layout_width="140dp"
@@ -31,12 +30,12 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/ui_coe" />
 
-            <!-- Right side: Logo + Text stacked vertically -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/collegeImage"
                 android:layout_marginStart="11dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -45,7 +44,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_ccis"
-                    android:layout_marginBottom="4dp"/>
+                    android:layout_marginBottom="8dp"/>
 
                 <TextView
                     android:id="@+id/collegeName"
@@ -55,7 +54,7 @@
                     android:text="College of Computing and Information Sciences"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
