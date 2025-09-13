@@ -90,17 +90,6 @@ public class Home extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        fabQR = view.findViewById(R.id.QRScan);
-
-        fabQR.setOnClickListener(v -> {
-            ScanOptions options = new ScanOptions();
-            options.setPrompt("Scan a QR Code");
-            options.setBeepEnabled(true);
-            options.setOrientationLocked(true);
-            options.setCaptureActivity(CaptureAct.class);
-            qrLauncher.launch(options);
-        });
-
         recyclerView = view.findViewById(R.id.Colleges);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
