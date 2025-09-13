@@ -2,10 +2,13 @@ package com.yaquobi.arkitektura2.fragments;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,6 +82,29 @@ public class Cas extends Fragment {
                     .replace(R.id.fragment_container, new Home())
                     .commit();
         });
+
+        ImageView speakerHistory = view.findViewById(R.id.speakerHistory);
+        ImageView speakerInfo = view.findViewById(R.id.speakerInfo);
+        ImageView speakerDepartment = view.findViewById(R.id.speakerDept);
+
+        View.OnClickListener speakerClickListener = v -> {
+            ImageView speaker = (ImageView) v;
+
+            speaker.setColorFilter(
+                    ContextCompat.getColor(requireContext(), R.color.lighter),
+                    PorterDuff.Mode.SRC_IN
+            );
+
+            // TODO: play audio here depending on which speaker was clicked
+
+            new Handler().postDelayed(() -> {
+                speaker.setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_IN);
+            }, 2000);
+        };
+
+        speakerHistory.setOnClickListener(speakerClickListener);
+        speakerInfo.setOnClickListener(speakerClickListener);
+        speakerDepartment.setOnClickListener(speakerClickListener);
 
         // Return the view after setting up the listener
         return view;

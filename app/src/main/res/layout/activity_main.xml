@@ -25,6 +25,8 @@
         app:itemActiveIndicatorStyle="@color/white"
         app:itemIconTint="@color/bottom_navigation_selector"
         app:itemPaddingTop="4dp"
+        app:itemPaddingBottom="12dp"
         app:itemTextColor="@color/bottom_navigation_selector"
+
         app:menu="@menu/bottom_nav_menu" />
 </RelativeLayout>

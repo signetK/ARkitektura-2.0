@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import com.yaquobi.arkitektura2.fragments.Home;
 import com.yaquobi.arkitektura2.fragments.AboutUs;
 import com.google.ar.core.ArCoreApk;
+import com.yaquobi.arkitektura2.fragments.Settings;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
             selectedFragment = new Home();
         } else if (ItemId == R.id.about_us) {
             selectedFragment = new AboutUs();
+        } else if (ItemId == R.id.settings) {
+            selectedFragment = new Settings();
         }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
