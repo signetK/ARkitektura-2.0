@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.Feedback">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/arrow_header" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#D9D9D9">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginBottom="200dp">
+
+                <TextView
+                    android:id="@+id/feedbackTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="12dp"
+                    android:text="Feedback"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/feedbackEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Email"
+                    android:inputType="textEmailAddress"
+                    android:padding="6dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:drawable/edit_text" />
+
+                <EditText
+                    android:id="@+id/feedbackMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:hint="Your Feedback"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine"
+                    android:padding="6dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:drawable/edit_text" />
+
+                <Button
+                    android:id="@+id/submitFeedbackBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit Feedback"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/lighter"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</FrameLayout>

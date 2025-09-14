@@ -71,15 +71,10 @@ public class Ccis extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout and store in a variable
         View view = inflater.inflate(R.layout.fragment_ccis, container, false);
 
-        // Find the arrow in the included header
         ImageView backArrow = view.findViewById(R.id.arrow);
-
-        // Set the click listener
         backArrow.setOnClickListener(v -> {
-            // Go back to Home fragment
             getParentFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, new Home())
@@ -91,6 +86,24 @@ public class Ccis extends Fragment {
             // Pass actual file path instead of just "CCIS"
             intent.putExtra("MODEL_KEY", "CCIS");
             startActivity(intent);
+        });
+
+        View fab = view.findViewById(R.id.feedback);
+        fab.setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new Feedback())
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+        View facultyBtn = view.findViewById(R.id.facultyBtn);
+        facultyBtn.setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new Faculty())
+                    .addToBackStack(null)
+                    .commit();
         });
 
         ImageView speakerHistory = view.findViewById(R.id.speakerHistory);

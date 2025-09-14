@@ -83,6 +83,15 @@ public class Com extends Fragment {
                     .commit();
         });
 
+        View fab = view.findViewById(R.id.feedback);
+        fab.setOnClickListener(v -> {
+            getParentFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new Feedback())
+                    .addToBackStack(null)
+                    .commit();
+        });
+
         ImageView speakerHistory = view.findViewById(R.id.speakerHistory);
         ImageView speakerInfo = view.findViewById(R.id.speakerInfo);
         ImageView speakerDepartment = view.findViewById(R.id.speakerDept);
