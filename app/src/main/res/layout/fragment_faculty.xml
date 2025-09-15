@@ -44,17 +44,19 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Faculty"
-                            android:textSize="22sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
                             android:gravity="center"
-                            android:paddingBottom="12dp" />
+                            android:paddingBottom="8dp"
+                            android:textColor="@color/black"/>
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/facultyRecyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="8dp"
-                            android:clipToPadding="false"/>
+                            android:backgroundTint="@color/white"
+                            android:clipToPadding="false"
+                            android:padding="8dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>

@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:layout_marginBottom="200dp">
+                android:layout_marginBottom="250dp">
 
                 <TextView
                     android:id="@+id/feedbackTitle"
@@ -36,7 +36,8 @@
                     android:text="Feedback"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/feedbackEmail"
@@ -47,7 +48,8 @@
                     android:padding="6dp"
                     android:textSize="14sp"
                     android:layout_marginTop="8dp"
-                    android:background="@android:drawable/edit_text" />
+                    android:background="@android:drawable/edit_text"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/feedbackMessage"
@@ -59,7 +61,8 @@
                     android:padding="6dp"
                     android:textSize="14sp"
                     android:layout_marginTop="8dp"
-                    android:background="@android:drawable/edit_text" />
+                    android:background="@android:drawable/edit_text"
+                    android:textColor="@color/black"/>
 
                 <Button
                     android:id="@+id/submitFeedbackBtn"
@@ -67,7 +70,8 @@
                     android:layout_height="wrap_content"
                     android:text="Submit Feedback"
                     android:layout_marginTop="8dp"
-                    android:backgroundTint="@color/lighter"/>
+                    android:backgroundTint="@color/lighter"
+                    android:textColor="@color/white"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
