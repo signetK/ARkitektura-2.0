@@ -5,14 +5,16 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    android:backgroundTint="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="12dp">
+        android:padding="12dp"
+       >
 
         <ImageView
             android:id="@+id/facultyImage"
@@ -29,7 +31,8 @@
             android:text="Faculty Name"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/facultyRole"
@@ -37,6 +40,7 @@
             android:layout_height="wrap_content"
             android:text="Role / Position"
             android:textSize="14sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/black"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
