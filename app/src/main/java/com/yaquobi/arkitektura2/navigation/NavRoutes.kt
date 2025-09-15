@@ -7,3 +7,6 @@ object Home
 
 @Serializable
 data class ARScreen(val model: String)
+
+@Serializable
+object CCISModelScreen
