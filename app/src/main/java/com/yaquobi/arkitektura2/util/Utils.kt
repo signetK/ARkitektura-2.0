@@ -3,6 +3,7 @@ package com.yaquobi.arkitektura2.util
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.ui.graphics.Color
+import dev.romainguy.kotlin.math.Float3
 import com.google.android.filament.Engine
 import com.google.ar.core.Anchor
 import io.github.sceneview.ar.node.AnchorNode
@@ -15,7 +16,7 @@ import io.github.sceneview.node.ModelNode
 object Utils {
     val colleges = mapOf(
 
-        "CCIS" to "CCIS_Initial_Model.glb",
+        "CCIS" to "ARSGLXFix_CCIS_Initial_Model_V4.glb",
     )
 
 
@@ -40,9 +41,20 @@ object Utils {
                     this += modelLoader.createInstancedModel(model, 10)
                 }
             }.removeLast(),
-            scaleToUnits = 1.0f
+            scaleToUnits = 0.8f
         ).apply {
             isEditable = true
+
+            onEditingChanged = { transforms ->
+                val minScale = 5.0f
+                val maxScale = 1.0f
+
+                // Clamp current scale
+                val clamped = scale.clamp(minScale, maxScale)
+                if (clamped != scale) {
+                    scale = clamped
+                }
+            }
         }
         val boundingBox = CubeNode(
             engine = engine,
@@ -63,9 +75,11 @@ object Utils {
 
     }
 
-    fun randomModel(): Pair<String, String> {
-        val randomIndex = (0 until colleges.size).random()
-        val college = colleges.keys.elementAt(randomIndex)
-        return Pair(college, getModelForCollege(college))
+    fun Float3.clamp(min: Float, max: Float): Float3 {
+        return Float3(
+            x.coerceIn(min, max),
+            y.coerceIn(min, max),
+            z.coerceIn(min, max)
+        )
     }
 }
