@@ -82,7 +82,7 @@ public class Ccis extends Fragment {
         });
         View previewBtn = view.findViewById(R.id.previewBtn);
         previewBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), com.yaquobi.arkitektura2.activity.ARActivity.class);
+            Intent intent = new Intent(requireContext(), ARActivity.class);
             // Pass actual file path instead of just "CCIS"
             intent.putExtra("MODEL_KEY", "CCIS");
             startActivity(intent);
