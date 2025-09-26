@@ -16,7 +16,7 @@ import io.github.sceneview.node.ModelNode
 object Utils {
     val colleges = mapOf(
 
-        "CCIS" to "CCIS_Initial_Model_V2.glb",
+        "CCIS" to "ARSGLXFix_CCIS_Initial_Model_V4.glb",
     )
 
 
@@ -41,13 +41,13 @@ object Utils {
                     this += modelLoader.createInstancedModel(model, 10)
                 }
             }.removeLast(),
-            scaleToUnits = 0.2f
+            scaleToUnits = 0.8f
         ).apply {
             isEditable = true
 
             onEditingChanged = { transforms ->
                 val minScale = 5.0f
-                val maxScale = 10.0f
+                val maxScale = 1.0f
 
                 // Clamp current scale
                 val clamped = scale.clamp(minScale, maxScale)
