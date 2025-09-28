@@ -4,8 +4,8 @@
 
     <!-- CCIS -->
     <string name="ccis_name">College of Computer and Information Sciences</string>
-    <string name="ccis_history">The college aims to produce future ready and globally competent information and communication technology professionals able to develop solutions for sustainable development.</string>
-    <string name="ccis_info">Programs include BSCS and BSIT</string>
+    <string name="ccis_history">The College of Computing and Information Sciences (CCIS) is the 13th College of the University and was formally established through BOR Resolution No. 002, series of 2023, last March 29, 2023. The BS in Computer Science and BS in Information Technology programs are the two undergraduate programs offered by the new college. CCIS also offers Master In Information Technology at the MMSU Graduate School. In 2016, the BSCS program was awarded the Center of Development in Information Technology by the Commission on Higher Education or CHED.</string>
+    <string name="ccis_info">The college aims to produce future ready and globally competent information and communication technology professionals able to develop solutions for sustainable development. Programs include Bachelor of Science in Computer Science (BSCS) and Bachelor of Science in Information Technology (BSIT). </string>
     <string name="ccis_department">BS in Computer Science \nBS in Information Technology</string>
 
     <!-- COE -->
