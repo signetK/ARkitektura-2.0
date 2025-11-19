@@ -4,68 +4,23 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-
+import android.os.Handler;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.yaquobi.arkitektura2.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.yaquobi.arkitektura2.fragments.Home;
 import com.yaquobi.arkitektura2.activity.ARActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Ccis#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Ccis extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Ccis() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ccis.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Ccis newInstance(String param1, String param2) {
-        Ccis fragment = new Ccis();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private MediaPlayer mediaPlayer = null;
+    private ImageView currentPlayingButton = null; // track which button is active
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,21 +30,24 @@ public class Ccis extends Fragment {
 
         ImageView backArrow = view.findViewById(R.id.arrow);
         backArrow.setOnClickListener(v -> {
+            stopAudio();
             getParentFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, new Home())
                     .commit();
         });
+
         View previewBtn = view.findViewById(R.id.previewBtn);
         previewBtn.setOnClickListener(v -> {
+            stopAudio();
             Intent intent = new Intent(requireContext(), ARActivity.class);
-            // Pass actual file path instead of just "CCIS"
             intent.putExtra("MODEL_KEY", "CCIS");
             startActivity(intent);
         });
 
         View fab = view.findViewById(R.id.feedback);
         fab.setOnClickListener(v -> {
+            stopAudio();
             getParentFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, new Feedback())
@@ -99,6 +57,7 @@ public class Ccis extends Fragment {
 
         View facultyBtn = view.findViewById(R.id.facultyBtn);
         facultyBtn.setOnClickListener(v -> {
+            stopAudio();
             getParentFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, new Faculty())
@@ -110,27 +69,63 @@ public class Ccis extends Fragment {
         ImageView speakerInfo = view.findViewById(R.id.speakerInfo);
         ImageView speakerDepartment = view.findViewById(R.id.speakerDept);
 
-        View.OnClickListener speakerClickListener = v -> {
-            ImageView speaker = (ImageView) v;
+        // ✅ Audio click listener
+        View.OnClickListener speakerClickListener = view1 -> {
+            ImageView btn = (ImageView) view1;
 
-            speaker.setColorFilter(
+            // If same button tapped while playing → stop audio
+            if (currentPlayingButton == btn && mediaPlayer != null && mediaPlayer.isPlaying()) {
+                stopAudio();
+                return;
+            }
+
+            stopAudio(); // Stop any running audio first
+            currentPlayingButton = btn;
+
+            // Change button tint to Active color
+            btn.setColorFilter(
                     ContextCompat.getColor(requireContext(), R.color.lighter),
                     PorterDuff.Mode.SRC_IN
             );
 
-            // TODO: play audio here depending on which speaker was clicked
+            // Play the correct file
+            int audioRes = 0;
+            if (btn == speakerHistory) audioRes = R.raw.ccis_history_audio;
+            else if (btn == speakerInfo) audioRes = R.raw.ccis_info_audio;
+            else if (btn == speakerDepartment) audioRes = R.raw.ccis_dept_audio;
 
-            new Handler().postDelayed(() -> {
-                speaker.setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_IN);
-            }, 2000);
+            mediaPlayer = MediaPlayer.create(requireContext(), audioRes);
+            mediaPlayer.start();
+
+            // When finished, reset button
+            mediaPlayer.setOnCompletionListener(mp -> stopAudio());
         };
 
         speakerHistory.setOnClickListener(speakerClickListener);
         speakerInfo.setOnClickListener(speakerClickListener);
         speakerDepartment.setOnClickListener(speakerClickListener);
 
-        // Return the view after setting up the listener
         return view;
+    }
+
+    private void stopAudio() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+
+        // Reset button color if one was active
+        if (currentPlayingButton != null) {
+            currentPlayingButton.setColorFilter(Color.DKGRAY, PorterDuff.Mode.SRC_IN);
+            currentPlayingButton = null;
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        stopAudio(); // ✅ Stop when leaving fragment
     }
 
     @Override
@@ -140,6 +135,4 @@ public class Ccis extends Fragment {
         bottomNav.setItemIconTintList(ColorStateList.valueOf(Color.BLACK));
         bottomNav.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
     }
-
-
 }

@@ -8,6 +8,6 @@
         android:icon="@drawable/baseline_people_24"
         android:id="@+id/about_us"/>
     <item android:title="Settings"
-        android:icon="@drawable/ic_settings"
+        android:icon="@drawable/baseline_settings_24"
         android:id="@+id/settings"/>
 </menu>

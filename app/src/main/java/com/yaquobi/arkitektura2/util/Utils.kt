@@ -16,7 +16,22 @@ import io.github.sceneview.node.ModelNode
 object Utils {
     val colleges = mapOf(
 
-        "CCIS" to "ARSGLXFix_CCIS_Initial_Model_V4.glb",
+        "CCIS" to "CCIS_Final_Model_v1.glb",
+        "CCIS Lobby" to "CCIS_Lobby_v2.glb",
+        "CCIS Room A" to "CCIS_RoomA_v1.glb",
+        "CCIS Room B" to "CCIS_RoomB_v1.glb",
+        "CCIS Room C" to "CCIS_RoomC_v1.glb",
+        "CCIS Room D" to "CCIS_RoomD_v1.glb",
+        "CCIS Hyflex 1" to "CCIS_Hyflex1_v1.glb",
+        "CCIS Hyflex 2" to "CCIS_Hyflex2_v1.glb",
+        "CCIS Lab Room 1" to "CCIS_LabRm1_v1.glb",
+        "CCIS Lab Room 2" to "CCIS_LabRm2_v1.glb",
+        "CCIS Lab Room 3" to "CCIS_LabRm3_v1.glb",
+        "CCIS Lab Room 4" to "CCIS_LabRm4_v1.glb",
+        "CCIS Lab Room 5" to "CCIS_LabRm5_v1.glb",
+        "CCIS COD Room" to "CCIS_COD_v1.glb",
+        "CCIS DCS" to "CCIS_DCS_v1.glb",
+        "CCIS DIT" to "CCIS_DIT_v1.glb",
     )
 
 

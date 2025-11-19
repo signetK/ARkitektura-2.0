@@ -22,56 +22,56 @@
             app:cardBackgroundColor="#D9D9D9">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:layout_marginBottom="250dp">
+                android:layout_height="450dp"
+                android:layout_marginBottom="250dp"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:id="@+id/feedbackTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:paddingBottom="12dp"
                     android:text="Feedback"
+                    android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/feedbackEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:drawable/edit_text"
                     android:hint="Your Email"
                     android:inputType="textEmailAddress"
                     android:padding="6dp"
-                    android:textSize="14sp"
-                    android:layout_marginTop="8dp"
-                    android:background="@android:drawable/edit_text"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/feedbackMessage"
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
-                    android:hint="Your Feedback"
-                    android:gravity="top|start"
-                    android:inputType="textMultiLine"
-                    android:padding="6dp"
-                    android:textSize="14sp"
                     android:layout_marginTop="8dp"
                     android:background="@android:drawable/edit_text"
-                    android:textColor="@color/black"/>
+                    android:gravity="top|start"
+                    android:hint="Your Feedback"
+                    android:inputType="textMultiLine"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/submitFeedbackBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Submit Feedback"
                     android:layout_marginTop="8dp"
                     android:backgroundTint="@color/lighter"
-                    android:textColor="@color/white"/>
+                    android:text="Submit Feedback"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

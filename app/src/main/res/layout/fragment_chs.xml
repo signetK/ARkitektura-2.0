@@ -33,9 +33,9 @@
                     app:cardBackgroundColor="#D9D9D9">
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
                         android:padding="16dp">
 
                         <LinearLayout
@@ -57,180 +57,180 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:ellipsize="end"
-                                android:singleLine="false"
-                                android:scrollHorizontally="false"
                                 android:gravity="center"
+                                android:scrollHorizontally="false"
+                                android:singleLine="false"
                                 android:text="@string/chs_name"
+                                android:textColor="@color/black"
                                 android:textSize="20sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:gravity="center"
                             android:layout_marginTop="16dp"
-                            android:layout_marginBottom="20dp">
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
                             <Button
                                 android:id="@+id/previewBtn"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_marginEnd="8dp"
                                 android:layout_weight="1"
+                                android:backgroundTint="@color/lighter"
                                 android:drawableLeft="@drawable/hollow_24"
                                 android:drawablePadding="8dp"
                                 android:text="3D Model"
-                                android:backgroundTint="@color/lighter"
-                                android:textColor="@color/white"
-                                android:layout_marginEnd="8dp"/>
+                                android:textColor="@color/white" />
 
                             <Button
                                 android:id="@+id/facultyBtn"
                                 android:layout_width="0dp"
                                 android:layout_height="45dp"
+                                android:layout_marginStart="8dp"
                                 android:layout_weight="1"
-                                android:drawableLeft="@drawable/baseline_people_24"
-                                android:drawableTint="@color/white"
-                                android:drawablePadding="8dp"
-                                android:text="Faculty"
                                 android:backgroundTint="@color/lighter"
-                                android:textColor="@color/white"
-                                android:layout_marginStart="8dp"/>
+                                android:drawableLeft="@drawable/baseline_people_24"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/white"
+                                android:text="Faculty"
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
+                            android:layout_marginTop="8dp"
                             android:gravity="center_vertical"
-                            android:layout_marginTop="8dp">
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="History :"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"/>
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"/> <!-- pushes speaker to the right -->
+                                android:layout_weight="1" /> <!-- pushes speaker to the right -->
 
                             <ImageView
                                 android:id="@+id/speakerHistory"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:src="@drawable/ic_speaker"
-                                app:tint="@color/dark_gray"
-                                android:clickable="true"
-                                android:focusable="true"/>
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/black"
-                            android:layout_marginVertical="4dp" />
-
-                        <TextView
-                            android:id="@+id/collegeHistory"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chs_history"
-                            android:layout_marginBottom="12dp"
-                            android:textColor="@color/black"
-                            android:justificationMode="inter_word"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="8dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Additional Info :"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"/>
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"/> <!-- pushes speaker to the right -->
-
-                            <ImageView
-                                android:id="@+id/speakerInfo"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:src="@drawable/ic_speaker"
-                                app:tint="@color/dark_gray"
-                                android:clickable="true"
-                                android:focusable="true"/>
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/black"
-                            android:layout_marginVertical="4dp" />
-
-                        <TextView
-                            android:id="@+id/collegeInfo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chs_info"
-                            android:layout_marginBottom="12dp"
-                            android:textColor="@color/black"
-                            android:justificationMode="inter_word"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="8dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Departments :"
-                                android:textStyle="bold"
-                                android:textColor="@color/black"/>
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"/> <!-- pushes speaker to the right -->
-
-                            <ImageView
-                                android:id="@+id/speakerDept"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:src="@drawable/ic_speaker"
                                 android:clickable="true"
                                 android:focusable="true"
+                                android:src="@drawable/ic_speaker"
                                 app:tint="@color/dark_gray" />
                         </LinearLayout>
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="@color/black"
-                            android:layout_marginVertical="4dp" />
+                            android:layout_marginVertical="4dp"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:id="@+id/collegeHistory"
+                            android:layout_width="match_parent"
+                            android:layout_height="626dp"
+                            android:layout_marginBottom="12dp"
+                            android:justificationMode="inter_word"
+                            android:text="@string/chs_history"
+                            android:textColor="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Additional Info :"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" /> <!-- pushes speaker to the right -->
+
+                            <ImageView
+                                android:id="@+id/speakerInfo"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:src="@drawable/ic_speaker"
+                                app:tint="@color/dark_gray" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="4dp"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:id="@+id/collegeInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:justificationMode="inter_word"
+                            android:text="@string/chs_info"
+                            android:textColor="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Departments :"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" /> <!-- pushes speaker to the right -->
+
+                            <ImageView
+                                android:id="@+id/speakerDept"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:src="@drawable/ic_speaker"
+                                app:tint="@color/dark_gray" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="4dp"
+                            android:background="@color/black" />
 
                         <TextView
                             android:id="@+id/department"
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/chs_department"
+                            android:orientation="vertical"
                             android:paddingTop="6dp"
-                            android:textColor="@color/black"/>
+                            android:text="@string/chs_department"
+                            android:textColor="@color/black" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
