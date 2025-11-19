@@ -16,7 +16,7 @@ import io.github.sceneview.node.ModelNode
 object Utils {
     val colleges = mapOf(
 
-        "CCIS" to "CCIS_Final_Model_v1.glb",
+        "CCIS" to "CCIS_Model_v7.glb",
         "CCIS Lobby" to "CCIS_Lobby_v2.glb",
         "CCIS Room A" to "CCIS_RoomA_v1.glb",
         "CCIS Room B" to "CCIS_RoomB_v1.glb",
